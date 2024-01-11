@@ -265,7 +265,7 @@ export default function Home() {
             <p className="text-xl  font-bold text-center  text-white bg-gray-800 rounded-xl py-2 mt-1">
               {/* <span className="text-orange-500"> (35% تخفيض)</span> */}
               عرض محدود استفد من{" "}
-              <span className="text-green-500">تخفيض (30%)</span>
+              <span className="text-green-500">تخفيض (36%)</span>
             </p>
           </div>
 
@@ -458,7 +458,7 @@ export default function Home() {
                 <h1 className="text-3xl  font-bold text-center text-white">
                   {/* <span className="text-orange-500"> (35% تخفيض)</span> */}
                   <br /> أطلب الآن واستفد من{" "}
-                  <span className="text-green-500">تخفيض (30%)</span>
+                  <span className="text-green-500">تخفيض (36%)</span>
                 </h1>
                 <div className="  my-4 py-4 rounded-lg bg-white/5">
                   <h1 className="text-2xl text-orange-500 text-center">
@@ -571,7 +571,7 @@ export default function Home() {
                               : "border-gray-700"
                           }`}
                         >
-                          1 Ensemble (7500 DA)
+                          1 Ensemble (6900 DA)
                         </div>
                         <div
                           onClick={() => setOffer(2)}
@@ -581,7 +581,7 @@ export default function Home() {
                               : "border-gray-700"
                           }`}
                         >
-                          2 Ensembles (13600 DA)
+                          2 Ensembles (13000 DA)
                         </div>
                       </div>
                     </div>
@@ -668,7 +668,7 @@ export default function Home() {
                         </p> */}
                         <p className="sm:flex block text-center mt-12 justify-center">
                           <span className="text-5xl text-orange-500 font-bold  block sm:inline">
-                            {offer === 1 ? "7500" : "13600"} DA
+                            {offer === 1 ? "6900" : "13000"} DA
                           </span>
 
                           <span className=" text-white text-lg line-through block sm:inline">
