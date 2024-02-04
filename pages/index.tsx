@@ -84,6 +84,65 @@ export default function Home() {
       );
     }
   };
+
+  useEffect(() => {
+    const handleBeforeUnload = async (event: any) => {
+      try {
+        if (!isSubmitted && number !== null) {
+          const agents_dict = [17, 23];
+          const agentId =
+            agents_dict[Math.floor(Math.random() * agents_dict.length)];
+
+          let productModel;
+          let productColor;
+          switch (model) {
+            case 1:
+              productModel = "1";
+              productColor = "noir";
+              break;
+            case 2:
+              productModel = "1";
+              productColor = "bleu";
+              break;
+            case 3:
+              productModel = "1";
+              productColor = "beige";
+              break;
+
+            default:
+              productModel = "1";
+              productColor = "noir";
+              break;
+          }
+          const { error } = await supabase.from("leads").insert({
+            first_name: fullName,
+            last_name: "",
+            address: "",
+            phone: `${number}`,
+            wilaya: province,
+            commune: address,
+            product: `ensemble_n3_`,
+            size,
+            color: productColor,
+            agent_id: agentId,
+            offer: `${offer}`,
+            is_abondoned: true,
+          });
+          if (error) {
+            setFormErr(false);
+          }
+        }
+      } catch (error) {}
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [address, fullName, number, province, isSubmitted, model, offer, size]);
+  
+  
   useEffect(() => {
     const fetchAgents = async () => {
       try {
